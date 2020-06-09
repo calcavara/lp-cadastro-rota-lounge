@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro Rota Lounge</title>
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+</head>
+<body>
+
+    <header>
+
+        <img class="rota-logo" src="img/cropped-rota-logo.webp" alt="Rota Lounge Logo">
+
+    </header>
+
+    <main>
+
+        <section class="presentation-section">
+
+
+
+        </section>
+
+        <section class="form-section">
+
+            <form>
+
+                <fieldset id="f-personal">
+
+                    <h2>Dados do proprietário</h2>
+
+                    <label for="owner-name" class="form-label">Nome do responsável</label>
+                    <input type="text" id="owner-name" class="form-input" name="owner-name">
+
+                    <label for="owner-cpf" class="form-label">CPF do responsável</label>
+                    <input type="number" id="owner-cpf" class="form-input" name="owner-cpf">
+
+                    <label for="owner-wpp" class="form-label">WhatsApp do responsável</label>
+                    <input type="tel" id="owner-wpp" class="form-input" name="owner-wpp">
+
+                </fieldset>
+
+                <fieldset id="f-business">
+
+                    <h2>Dados do estabelecimento</h2>
+
+                    <label for="business-name" class="form-label">Nome do estabelecimento</label>
+                    <input type="text" id="business-name" class="form-input" name="business-name">
+
+                    <label for="business-zip-code" class="form-label">CEP</label>
+                    <input type="number" id="business-zip-code" class="form-input" name="business-zip-code">
+
+                    <label for="business-facade" class="form-label">Foto da fachada</label>
+                    <input type="file" id="business-facade" class="form-file-input" name="business-facade">
+
+                </fieldset>
+
+                <fieldset id="f-details">
+
+                    <h2>Características do estabelecimento</h2>
+
+                    <div>
+
+                        <h3>Tipo</h3>
+
+                        <input type="radio" id="tabacaria" class="form-radio-input" name="tipo-estab" value="tabacaria">
+                        <label for="tabacaria" class="radio-label">Tabacaria</label>
+    
+                        <input type="radio" id="lounge" class="form-radio-input" name="tipo-estab" value="lounge">
+                        <label for="lounge" class="radio-label">Lounge</label>
+    
+                        <input type="radio" id="headshop" class="form-radio-input" name="tipo-estab" value="headshop">
+                        <label for="headshop" class="radio-label">Headshop</label>
+    
+                        <input type="radio" id="charuteria" class="form-radio-input" name="tipo-estab" value="charuteria">
+                        <label for="charuteria" class="radio-label">Charuteria</label>
+    
+                        <input type="radio" id="loja" class="form-radio-input" name="tipo-estab" value="loja">
+                        <label for="loja" class="radio-label">Loja</label>
+    
+                        <input type="radio" id="fabricante" class="form-radio-input" name="tipo-estab" value="fabricante">
+                        <label for="fabricante" class="radio-label">Fabricante</label>
+    
+                        <input type="radio" id="distribuidora" class="form-radio-input" name="tipo-estab" value="distribuidora">
+                        <label for="distribuidora" class="radio-label">Distribuidora</label>
+
+                    </div>
+
+                    <div>
+
+                        <h3>Comodidades</h3>
+
+                        <input type="checkbox" id="delivery" class="check-features" name="features" value="delivery">
+                        <label for="delivery" class="features-label">Delivery</label>
+
+                        <input type="checkbox" id="comida-no-local" class="check-features" name="features" value="comida-no-local">
+                        <label for="comida-no-local" class="features-label">Comida no local</label>
+
+                        <input type="checkbox" id="estacionamento" class="check-features" name="features" value="estacionamento">
+                        <label for="estacionamento" class="features-label">Estacionamento</label>
+
+                        <input type="checkbox" id="pode-levar-narguile" class="check-features" name="features" value="pode-levar-narguile">
+                        <label for="pode-levar-narguile" class="features-label">Pode levar narguile</label>
+
+                        <input type="checkbox" id="area-de-fumante" class="check-features" name="features" value="area-de-fumante">
+                        <label for="area-de-fumante" class="features-label">Área de fumante</label>
+
+                        <input type="checkbox" id="jogos-no-local" class="check-features" name="features" value="jogos-no-local">
+                        <label for="jogos-no-local" class="features-label">Jogos no local</label>
+
+                        <input type="checkbox" id="bar" class="check-features" name="features" value="bar">
+                        <label for="bar" class="features-label">Bar</label>
+
+                    </div>
+
+                </fieldset>
+
+                <fieldset id="f-schedule">
+
+                    <h2>Funcionamento</h2>
+
+                    <div>
+
+                        <h3>Dias de atendimento</h3>
+
+                        <input type="checkbox" id="seg" class="check-days" name="weekdays" value="seg">
+                        <label for="seg" class="weekdays-label">Segunda-feira</label>
+
+                        <input type="checkbox" id="ter" class="check-days" name="weekdays" value="ter">
+                        <label for="ter" class="weekdays-label">Terça-feira</label>
+
+                        <input type="checkbox" id="qua" class="check-days" name="weekdays" value="qua">
+                        <label for="qua" class="weekdays-label">Quarta-feira</label>
+
+                        <input type="checkbox" id="quin" class="check-days" name="weekdays" value="quin">
+                        <label for="quin" class="weekdays-label">Quinta-feira</label>
+
+                        <input type="checkbox" id="sex" class="check-days" name="weekdays" value="sex">
+                        <label for="sex" class="weekdays-label">Sexta-feira</label>
+
+                        <input type="checkbox" id="sabado" class="check-days" name="weekdays" value="sabado">
+                        <label for="sabado" class="weekdays-label">Sábado</label>
+
+                        <input type="checkbox" id="domingo" class="check-days" name="weekdays" value="domingo">
+                        <label for="domingo" class="weekdays-label">Domingo</label>
+
+                    </div>
+
+                    <label for="abertura" class="form-label">Horário de abertura</label>
+                    <input type="time" id="abertura" class="time-input" name="abertura">
+
+                    <label for="encerramento" class="form-label">Horário de encerramento</label>
+                    <input type="time" id="encerramento" class="time-input" name="encerramento">
+
+                </fieldset>
+
+            </form>
+
+            <div class="fieldset-indicator">
+
+                <div id="ind-00" class="indicator">1</div>
+
+                <div id="ind-01" class="indicator">2</div>
+
+                <div id="ind-02" class="indicator">3</div>
+
+                <div id="ind-03" class="indicator">4</div>
+
+            </div>
+
+        </section>
+
+    </main>
+    
+
+    <script type="text/javascript" src="js/script.js"></script>
+</body>
+</html>

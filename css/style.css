@@ -1,0 +1,28 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    color: rgb(33,37,41);
+}
+
+body {
+    background-color: rgb(253,204,82);
+}
+
+/* HEADER */
+
+header {
+    padding-top: 1rem;
+}
+
+.rota-logo {
+    width: 50vw;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+}
+
+/* FORM */
+
+
+/* FIELDSETS */
