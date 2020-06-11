@@ -3,6 +3,7 @@
     padding: 0;
     box-sizing: border-box;
     color: rgb(33,37,41);
+    font-family: Montserrat, Helvetica, Arial, sans-serif;
 }
 
 body {
@@ -16,13 +17,97 @@ header {
 }
 
 .rota-logo {
-    width: 50vw;
-    height: auto;
+    height: 15vh;
+    width: auto;
     display: block;
     margin: 0 auto;
 }
 
-/* FORM */
+.logo-form {
+    height: 5vh;
+}
 
+/* FORM */
+.form-section {
+    height: calc(100vh - 5vh - 1rem);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
 
 /* FIELDSETS */
+fieldset {
+    border: none;
+}
+
+.fieldset-hidden {
+    display: none;
+}
+
+fieldset > h2 {
+    color: rgb(255, 255, 255);
+    background-color: rgb(19,0,57);
+    box-shadow: 0.5rem 0 0 rgb(19,0,57), -0.5rem 0 0 rgb(19,0,57);
+    position: relative;
+    left: 0.25rem;
+    padding: 0.25rem 0 0.25rem 0;
+    text-transform: uppercase;
+    font-weight: 500;
+    display: inline;
+    margin-right: 0.5rem;
+}
+
+.input-margin {
+    padding: 0 0.75rem;
+}
+
+.form-label {
+    display: block;
+    font-weight: 500;
+}
+
+.form-input {
+    width: 100%;
+    height: 2rem;
+    margin-bottom: 3vh;
+    border: none;
+}
+
+.next-step {
+    display: block;
+    color: rgb(19,0,57);
+    background-color: transparent;
+    border: 3px solid rgb(19,0,57);
+    font-size: 1.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    padding: 0.25rem 1rem;
+    margin: 0 auto 0 auto;
+    outline: none;
+    cursor: pointer;
+}
+
+.fieldset-indicator {
+    display: flex;
+    justify-content: space-around;
+}
+
+.indicator {
+    color: rgb(255, 255, 255);
+    font-size: 2rem;
+    font-weight: 700;
+    text-align: center;
+    border: 2px solid rgb(255, 255, 255);
+    width: 2.75rem;
+    height: 2.75rem;
+}
+
+.indicator.done {
+    color: rgb(0,200,81);
+    border-color: rgb(0,200,81);
+}
+
+.indicator.active {
+    color: rgb(19,0,57);
+    border-color: rgb(19,0,57);
+}
