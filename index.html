@@ -27,9 +27,9 @@
 
             <form id="subscription-form" action="">
 
-                <fieldset id="f-personal" >
+                <fieldset id="f-personal" class="fieldset-hidden">
 
-                    <h2>Dados do proprietário</h2>
+                    <div class="fset-title-container"><h2>Dados do proprietário</h2></div>
 
                     <div class="input-margin">
 
@@ -48,7 +48,7 @@
 
                 <fieldset id="f-business" class="fieldset-hidden">
 
-                    <h2>Dados do estabelecimento</h2>
+                    <div class="fset-title-container"><h2>Dados do estabelecimento</h2></div>
 
                     <div class="input-margin">
 
@@ -67,71 +67,78 @@
 
                 <fieldset id="f-details" class="fieldset-hidden">
 
-                    <h2>Características do estabelecimento</h2>
+                    <div class="fset-title-container"><h2>Características do estabelecimento</h2></div>
 
-                    <div>
+                    <div class="input-margin">
+                        
+                        <label for="shop-type" class="form-label">Tipo</label>
 
-                        <h3>Tipo</h3>
+                        <select name="shop-type" id="shop-type">
 
-                        <input type="radio" id="tabacaria" class="form-radio-input" name="tipo-estab" value="tabacaria">
-                        <label for="tabacaria" class="radio-label">Tabacaria</label>
-    
-                        <input type="radio" id="lounge" class="form-radio-input" name="tipo-estab" value="lounge">
-                        <label for="lounge" class="radio-label">Lounge</label>
-    
-                        <input type="radio" id="headshop" class="form-radio-input" name="tipo-estab" value="headshop">
-                        <label for="headshop" class="radio-label">Headshop</label>
-    
-                        <input type="radio" id="charuteria" class="form-radio-input" name="tipo-estab" value="charuteria">
-                        <label for="charuteria" class="radio-label">Charuteria</label>
-    
-                        <input type="radio" id="loja" class="form-radio-input" name="tipo-estab" value="loja">
-                        <label for="loja" class="radio-label">Loja</label>
-    
-                        <input type="radio" id="fabricante" class="form-radio-input" name="tipo-estab" value="fabricante">
-                        <label for="fabricante" class="radio-label">Fabricante</label>
-    
-                        <input type="radio" id="distribuidora" class="form-radio-input" name="tipo-estab" value="distribuidora">
-                        <label for="distribuidora" class="radio-label">Distribuidora</label>
+                            <option value="tabacaria">Tabacaria</option>
+                            <option value="lounge">Lounge</option>
+                            <option value="headshop">Headshop</option>
+                            <option value="charuteria">Charuteria</option>
+                            <option value="loja">Loja</option>
+                            <option value="fabricante">Fabricante</option>
+                            <option value="distribuidora">Distribuidora</option>
 
-                    </div>
+                        </select>
 
-                    <div>
 
-                        <h3>Comodidades</h3>
 
-                        <input type="checkbox" id="delivery" class="check-features" name="features" value="delivery">
-                        <label for="delivery" class="features-label">Delivery</label>
+                        <label for="features" class="form-label">Comodidades</label>
 
-                        <input type="checkbox" id="comida-no-local" class="check-features" name="features" value="comida-no-local">
-                        <label for="comida-no-local" class="features-label">Comida no local</label>
+                        <div class="input-group">
 
-                        <input type="checkbox" id="estacionamento" class="check-features" name="features" value="estacionamento">
-                        <label for="estacionamento" class="features-label">Estacionamento</label>
+                            <div class="single-input">
+                                <input type="checkbox" id="delivery" class="check-features" name="features" value="delivery">
+                                <label for="delivery" class="features-label">Delivery</label>
+                            </div>
 
-                        <input type="checkbox" id="pode-levar-narguile" class="check-features" name="features" value="pode-levar-narguile">
-                        <label for="pode-levar-narguile" class="features-label">Pode levar narguile</label>
+                            <div class="single-input">
+                                <input type="checkbox" id="comida-no-local" class="check-features" name="features" value="comida-no-local">
+                                <label for="comida-no-local" class="features-label">Comida no local</label>
+                            </div>
 
-                        <input type="checkbox" id="area-de-fumante" class="check-features" name="features" value="area-de-fumante">
-                        <label for="area-de-fumante" class="features-label">Área de fumante</label>
+                            <div class="single-input">
+                                <input type="checkbox" id="estacionamento" class="check-features" name="features" value="estacionamento">
+                                <label for="estacionamento" class="features-label">Estacionamento</label>
+                            </div>
 
-                        <input type="checkbox" id="jogos-no-local" class="check-features" name="features" value="jogos-no-local">
-                        <label for="jogos-no-local" class="features-label">Jogos no local</label>
+                            <div class="single-input">
+                                <input type="checkbox" id="pode-levar-narguile" class="check-features" name="features" value="pode-levar-narguile">
+                                <label for="pode-levar-narguile" class="features-label">Pode levar narguile</label>
+                            </div>
 
-                        <input type="checkbox" id="bar" class="check-features" name="features" value="bar">
-                        <label for="bar" class="features-label">Bar</label>
+                            <div class="single-input">
+                                <input type="checkbox" id="area-de-fumante" class="check-features" name="features" value="area-de-fumante">
+                                <label for="area-de-fumante" class="features-label">Área de fumante</label>
+                            </div>
 
+                            <div class="single-input">
+                                <input type="checkbox" id="jogos-no-local" class="check-features" name="features" value="jogos-no-local">
+                                <label for="jogos-no-local" class="features-label">Jogos no local</label>
+                            </div>
+
+                            <div class="single-input">
+                                <input type="checkbox" id="bar" class="check-features" name="features" value="bar">
+                                <label for="bar" class="features-label">Bar</label>
+                            </div>
+
+                        </div>
+                    
                     </div>
 
                 </fieldset>
 
-                <fieldset id="f-schedule" class="fieldset-hidden">
+                <fieldset id="f-schedule" class="12fieldset-hidden">
 
-                    <h2>Funcionamento</h2>
+                    <div class="fset-title-container"><h2>Funcionamento</h2></div>
 
                     <div>
 
-                        <h3>Dias de atendimento</h3>
+                        <label for="weekdays" class="form-label">Dias de atendimento</label>
 
                         <input type="checkbox" id="seg" class="check-days" name="weekdays" value="seg">
                         <label for="seg" class="weekdays-label">Segunda-feira</label>
@@ -185,6 +192,6 @@
     </main>
     
 
-    <script type="text/javascript" src="js/script.js"></script>
+    <!--<script type="text/javascript" src="js/script.js"></script>-->
 </body>
 </html>

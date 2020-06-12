@@ -44,9 +44,15 @@ fieldset {
     display: none;
 }
 
-fieldset > h2 {
+.fset-title-container {
+    margin-bottom: 3vh;
+}
+
+fieldset h2 {
     color: rgb(255, 255, 255);
     background-color: rgb(19,0,57);
+    -webkit-box-shadow: 0.5rem 0 0 rgb(19,0,57), -0.5rem 0 0 rgb(19,0,57);
+    -moz-box-shadow: 0.5rem 0 0 rgb(19,0,57), -0.5rem 0 0 rgb(19,0,57);
     box-shadow: 0.5rem 0 0 rgb(19,0,57), -0.5rem 0 0 rgb(19,0,57);
     position: relative;
     left: 0.25rem;
@@ -68,9 +74,36 @@ fieldset > h2 {
 
 .form-input {
     width: 100%;
-    height: 2rem;
+    height: 2.5rem;
     margin-bottom: 3vh;
     border: none;
+}
+
+.input-group {
+    background-color: rgb(250, 250, 250);
+    padding: 2vh 0.5rem;
+}
+
+.single-input {
+    margin: 2vh 0;
+}
+
+.single-input:first-child {
+    margin-top: 0;
+}
+
+.single-input:last-child {
+    margin-bottom: 0;
+}
+
+#shop-type {
+    width: 100%;
+    border: none;
+    height: 2.5rem;
+    background-color: rgb(250, 250, 250);
+    margin-bottom: 3vh;
+    font-family: Montserrat, Helvetica, Arial, sans-serif;
+    font-size: 1rem;
 }
 
 .next-step {
