@@ -9,228 +9,230 @@
 </head>
 <body>
 
-    <header>
+    <div class="container">
 
-        <img class="rota-logo logo-form" src="img/cropped-rota-logo.webp" alt="Rota Lounge Logo">
+        <header>
 
-    </header>
+            <img class="rota-logo logo-form" src="img/cropped-rota-logo.webp" alt="Rota Lounge Logo">
 
-    <main>
+        </header>
 
-        <section class="presentation-section">
+        <main>
+
+            <section class="presentation-section">
 
 
 
-        </section>
+            </section>
 
-        <section class="form-section">
+            <section class="form-section">
 
-            <form id="subscription-form" action="">
+                <form id="subscription-form" action="">
 
-                <fieldset id="f-personal" class="">
+                    <fieldset id="f-personal" class="">
 
-                    <h2>Dados do proprietário</h2>
-                    <div class="h2-spacer"></div>
+                        <h2>Dados do proprietário</h2>
+                        <div class="h2-spacer"></div>
 
-                    <div class="input-margin">
+                        <div class="input-margin">
 
-                        <label for="owner-name" class="form-label">Nome do responsável</label>
-                        <input type="text" id="owner-name" class="form-input" name="owner-name">
+                            <label for="owner-name" class="form-label">Nome do responsável</label>
+                            <input type="text" id="owner-name" class="form-input" name="owner-name">
 
-                        <label for="owner-cpf" class="form-label">CPF do responsável</label>
-                        <input type="number" id="owner-cpf" class="form-input" name="owner-cpf">
+                            <label for="owner-cpf" class="form-label">CPF do responsável</label>
+                            <input type="number" id="owner-cpf" class="form-input" name="owner-cpf">
 
-                        <label for="owner-wpp" class="form-label">WhatsApp do responsável</label>
-                        <input type="tel" id="owner-wpp" class="form-input" name="owner-wpp">
+                            <label for="owner-wpp" class="form-label">WhatsApp do responsável</label>
+                            <input type="tel" id="owner-wpp" class="form-input" name="owner-wpp">
 
-                    </div>
+                        </div>
 
-                </fieldset>
+                    </fieldset>
 
-                <fieldset id="f-business" class="fieldset-hidden">
+                    <fieldset id="f-business" class="fieldset-hidden">
 
-                    <h2>Dados do estabelecimento</h2>
-                    <div class="h2-spacer"></div>
+                        <h2>Dados do estabelecimento</h2>
+                        <div class="h2-spacer"></div>
 
-                    <div class="input-margin">
+                        <div class="input-margin">
 
-                        <label for="business-name" class="form-label">Nome do estabelecimento</label>
-                        <input type="text" id="business-name" class="form-input" name="business-name">
+                            <label for="business-name" class="form-label">Nome do estabelecimento</label>
+                            <input type="text" id="business-name" class="form-input" name="business-name">
 
-                        <label for="business-zip-code" class="form-label">CEP</label>
-                        <input type="number" id="business-zip-code" class="form-input" name="business-zip-code">
+                            <label for="business-zip-code" class="form-label">CEP</label>
+                            <input type="number" id="business-zip-code" class="form-input" name="business-zip-code">
 
-                        <label for="business-facade" class="form-label">Foto da fachada</label>
-                        <input type="file" id="business-facade" class="form-file-input" name="business-facade">
+                            <p class="form-label">Foto da fachada</p>
+                            <label for="business-facade" id="upload-button">Enviar foto <span class="upload-symbol">&#8682;</span></label>
+                            <input type="file" id="business-facade" name="business-facade">
 
-                    </div>
+                        </div>
 
-                </fieldset>
+                    </fieldset>
 
-                <fieldset id="f-details" class="fieldset-hidden">
+                    <fieldset id="f-details" class="fieldset-hidden">
 
-                    <h2>Características do estabelecimento</h2>
-                    <div class="h2-spacer"></div>
+                        <h2>Características do estabelecimento</h2>
+                        <div class="h2-spacer"></div>
 
-                    <div class="input-margin">
+                        <div class="input-margin">
+                            
+                            <label for="shop-type" class="form-label">Tipo</label>
+
+                            <select name="shop-type" id="shop-type">
+
+                                <option value="tabacaria">Tabacaria</option>
+                                <option value="lounge">Lounge</option>
+                                <option value="headshop">Headshop</option>
+                                <option value="charuteria">Charuteria</option>
+                                <option value="loja">Loja</option>
+                                <option value="fabricante">Fabricante</option>
+                                <option value="distribuidora">Distribuidora</option>
+
+                            </select>
+
+                            <label for="features" class="form-label">Comodidades</label>
+
+                            <div class="input-group">
+
+                                <div class="single-input">
+                                    <input type="checkbox" id="delivery" class="check-features" name="features" value="delivery">
+                                    <label for="delivery" class="features-label">Delivery</label>
+                                </div>
+
+                                <div class="single-input">
+                                    <input type="checkbox" id="comida-no-local" class="check-features" name="features" value="comida-no-local">
+                                    <label for="comida-no-local" class="features-label">Comida no local</label>
+                                </div>
+
+                                <div class="single-input">
+                                    <input type="checkbox" id="estacionamento" class="check-features" name="features" value="estacionamento">
+                                    <label for="estacionamento" class="features-label">Estacionamento</label>
+                                </div>
+
+                                <div class="single-input">
+                                    <input type="checkbox" id="pode-levar-narguile" class="check-features" name="features" value="pode-levar-narguile">
+                                    <label for="pode-levar-narguile" class="features-label">Pode levar narguile</label>
+                                </div>
+
+                                <div class="single-input">
+                                    <input type="checkbox" id="area-de-fumante" class="check-features" name="features" value="area-de-fumante">
+                                    <label for="area-de-fumante" class="features-label">Área de fumante</label>
+                                </div>
+
+                                <div class="single-input">
+                                    <input type="checkbox" id="jogos-no-local" class="check-features" name="features" value="jogos-no-local">
+                                    <label for="jogos-no-local" class="features-label">Jogos no local</label>
+                                </div>
+
+                                <div class="single-input">
+                                    <input type="checkbox" id="bar" class="check-features" name="features" value="bar">
+                                    <label for="bar" class="features-label">Bar</label>
+                                </div>
+
+                            </div>
                         
-                        <label for="shop-type" class="form-label">Tipo</label>
+                        </div>
 
-                        <select name="shop-type" id="shop-type">
+                    </fieldset>
 
-                            <option value="tabacaria">Tabacaria</option>
-                            <option value="lounge">Lounge</option>
-                            <option value="headshop">Headshop</option>
-                            <option value="charuteria">Charuteria</option>
-                            <option value="loja">Loja</option>
-                            <option value="fabricante">Fabricante</option>
-                            <option value="distribuidora">Distribuidora</option>
+                    <fieldset id="f-schedule" class="fieldset-hidden">
 
-                        </select>
+                        <h2>Funcionamento</h2>
+                        <div class="h2-spacer"></div>
 
+                        <div class="input-margin">
 
+                            <label for="weekdays" class="form-label">Dias de atendimento</label>
 
-                        <label for="features" class="form-label">Comodidades</label>
+                            <div class="day-centering">
+                                <div class="input-group atendimento">
 
-                        <div class="input-group">
+                                    <div class="input-day">
+                                        <input type="checkbox" id="seg" class="check-days" name="weekdays" value="seg">
+                                        <label for="seg" class="weekdays-label">Segunda-feira</label>
+                                    </div>
 
-                            <div class="single-input">
-                                <input type="checkbox" id="delivery" class="check-features" name="features" value="delivery">
-                                <label for="delivery" class="features-label">Delivery</label>
+                                    <div class="input-day">
+                                        <input type="checkbox" id="ter" class="check-days" name="weekdays" value="ter">
+                                        <label for="ter" class="weekdays-label">Terça-feira</label>
+                                    </div>
+
+                                    <div class="input-day">
+                                        <input type="checkbox" id="qua" class="check-days" name="weekdays" value="qua">
+                                        <label for="qua" class="weekdays-label">Quarta-feira</label>
+                                    </div>
+
+                                    <div class="input-day">
+                                        <input type="checkbox" id="quin" class="check-days" name="weekdays" value="quin">
+                                        <label for="quin" class="weekdays-label">Quinta-feira</label>
+                                    </div>
+
+                                    <div class="input-day">
+                                        <input type="checkbox" id="sex" class="check-days" name="weekdays" value="sex">
+                                        <label for="sex" class="weekdays-label">Sexta-feira</label>
+                                    </div>
+
+                                    <div class="input-day">
+                                        <input type="checkbox" id="sabado" class="check-days" name="weekdays" value="sabado">
+                                        <label for="sabado" class="weekdays-label">Sábado</label>
+                                    </div>
+
+                                    <div class="input-day">
+                                        <input type="checkbox" id="domingo" class="check-days" name="weekdays" value="domingo">
+                                        <label for="domingo" class="weekdays-label">Domingo</label>
+                                    </div>
+
+                                    <div class="input-day"></div>
+
+                                </div>
                             </div>
 
-                            <div class="single-input">
-                                <input type="checkbox" id="comida-no-local" class="check-features" name="features" value="comida-no-local">
-                                <label for="comida-no-local" class="features-label">Comida no local</label>
-                            </div>
+                            <p class="form-label">Horários</p>
 
-                            <div class="single-input">
-                                <input type="checkbox" id="estacionamento" class="check-features" name="features" value="estacionamento">
-                                <label for="estacionamento" class="features-label">Estacionamento</label>
-                            </div>
+                            <div class="input-group schedule">
 
-                            <div class="single-input">
-                                <input type="checkbox" id="pode-levar-narguile" class="check-features" name="features" value="pode-levar-narguile">
-                                <label for="pode-levar-narguile" class="features-label">Pode levar narguile</label>
-                            </div>
+                                <div class="hours">
+                                    <label for="abertura" class="form-label">Abertura</label>
+                                    <input type="time" id="abertura" class="time-input" name="abertura">
+                                </div>
 
-                            <div class="single-input">
-                                <input type="checkbox" id="area-de-fumante" class="check-features" name="features" value="area-de-fumante">
-                                <label for="area-de-fumante" class="features-label">Área de fumante</label>
-                            </div>
+                                <div class="hours">
+                                    <label for="encerramento" class="form-label">Encerramento</label>
+                                    <input type="time" id="encerramento" class="time-input" name="encerramento">
+                                </div>
 
-                            <div class="single-input">
-                                <input type="checkbox" id="jogos-no-local" class="check-features" name="features" value="jogos-no-local">
-                                <label for="jogos-no-local" class="features-label">Jogos no local</label>
-                            </div>
-
-                            <div class="single-input">
-                                <input type="checkbox" id="bar" class="check-features" name="features" value="bar">
-                                <label for="bar" class="features-label">Bar</label>
                             </div>
 
                         </div>
-                    
-                    </div>
 
-                </fieldset>
+                    </fieldset>
 
-                <fieldset id="f-schedule" class="fieldset-hidden">
+                </form>
 
-                    <h2>Funcionamento</h2>
-                    <div class="h2-spacer"></div>
+                <div>
 
-                    <div class="input-margin">
+                    <button type="button" class="next-step">Avançar ></button>
 
-                        <label for="weekdays" class="form-label">Dias de atendimento</label>
+                    <div class="fieldset-indicator">
 
-                        <div class="day-centering">
-                            <div class="input-group atendimento">
+                        <p id="ind-00" class="indicator active">1</p>
 
-                                <div class="input-day">
-                                    <input type="checkbox" id="seg" class="check-days" name="weekdays" value="seg">
-                                    <label for="seg" class="weekdays-label">Segunda-feira</label>
-                                </div>
+                        <p id="ind-01" class="indicator">2</p>
 
-                                <div class="input-day">
-                                    <input type="checkbox" id="ter" class="check-days" name="weekdays" value="ter">
-                                    <label for="ter" class="weekdays-label">Terça-feira</label>
-                                </div>
+                        <p id="ind-02" class="indicator">3</p>
 
-                                <div class="input-day">
-                                    <input type="checkbox" id="qua" class="check-days" name="weekdays" value="qua">
-                                    <label for="qua" class="weekdays-label">Quarta-feira</label>
-                                </div>
-
-                                <div class="input-day">
-                                    <input type="checkbox" id="quin" class="check-days" name="weekdays" value="quin">
-                                    <label for="quin" class="weekdays-label">Quinta-feira</label>
-                                </div>
-
-                                <div class="input-day">
-                                    <input type="checkbox" id="sex" class="check-days" name="weekdays" value="sex">
-                                    <label for="sex" class="weekdays-label">Sexta-feira</label>
-                                </div>
-
-                                <div class="input-day">
-                                    <input type="checkbox" id="sabado" class="check-days" name="weekdays" value="sabado">
-                                    <label for="sabado" class="weekdays-label">Sábado</label>
-                                </div>
-
-                                <div class="input-day">
-                                    <input type="checkbox" id="domingo" class="check-days" name="weekdays" value="domingo">
-                                    <label for="domingo" class="weekdays-label">Domingo</label>
-                                </div>
-
-                                <div class="input-day"></div>
-
-                            </div>
-                        </div>
-
-                        <p class="form-label">Horários</p>
-
-                        <div class="input-group schedule">
-
-                            <div class="hours">
-                                <label for="abertura" class="form-label">Abertura</label>
-                                <input type="time" id="abertura" class="time-input" name="abertura">
-                            </div>
-
-                            <div class="hours">
-                                <label for="encerramento" class="form-label">Encerramento</label>
-                                <input type="time" id="encerramento" class="time-input" name="encerramento">
-                            </div>
-
-                        </div>
+                        <p id="ind-03" class="indicator">4</p>
 
                     </div>
-
-                </fieldset>
-
-            </form>
-
-            <div>
-
-                <button type="button" class="next-step">Avançar ></button>
-
-                <div class="fieldset-indicator">
-
-                    <p id="ind-00" class="indicator active">1</p>
-
-                    <p id="ind-01" class="indicator">2</p>
-
-                    <p id="ind-02" class="indicator">3</p>
-
-                    <p id="ind-03" class="indicator">4</p>
 
                 </div>
 
-            </div>
+            </section>
 
-        </section>
+        </main>
 
-    </main>
-    
+    </div>
 
     <script type="text/javascript" src="js/script.js"></script>
 </body>
