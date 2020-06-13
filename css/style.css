@@ -32,7 +32,14 @@ header {
     height: calc(100vh - 5vh - 1rem);
     display: flex;
     flex-direction: column;
-    justify-content: space-around;
+    justify-content: space-between;
+}
+
+#subscription-form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    flex-grow: 10;
 }
 
 /* FIELDSETS */
@@ -42,10 +49,6 @@ fieldset {
 
 .fieldset-hidden {
     display: none;
-}
-
-.fset-title-container {
-    margin-bottom: 3vh;
 }
 
 fieldset h2 {
@@ -63,6 +66,10 @@ fieldset h2 {
     margin-right: 0.5rem;
 }
 
+.h2-spacer {
+    margin-bottom: 3vh;
+}
+
 .input-margin {
     padding: 0 0.75rem;
 }
@@ -72,11 +79,31 @@ fieldset h2 {
     font-weight: 500;
 }
 
+input {
+    font-family: Montserrat, Helvetica, Arial, sans-serif;
+    font-size: 1.25rem;
+}
+
+input[type=text],
+input[type=number],
+input[type=tel] {
+    padding-left: 0.75rem;
+}
+
+input:focus,
+select:focus {
+    outline: 3px solid rgb(130, 190, 254);
+}
+
 .form-input {
     width: 100%;
     height: 2.5rem;
     margin-bottom: 3vh;
     border: none;
+}
+
+.form-file-input {
+    
 }
 
 .input-group {
@@ -106,6 +133,56 @@ fieldset h2 {
     font-size: 1rem;
 }
 
+.day-centering {
+    margin: 0 auto;
+}
+
+.atendimento {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-bottom: 2vh;
+}
+
+.input-day {
+    flex-basis: 40vw;
+    margin-bottom: 2.5vh;
+}
+
+.input-day:nth-last-child(2) {
+    margin-bottom: 0;
+}
+
+.schedule {
+    display: flex;
+    justify-content: space-around;
+}
+
+.hours {
+    flex-basis: 0;
+    flex-grow: 1;
+}
+
+.hours label {
+    font-size: 0.75rem;
+}
+
+.hours input {
+    text-align: center;
+}
+
+.hours:first-child {
+    margin-right: 0.75rem;
+}
+
+.hours:last-child {
+    margin-left: 0.75rem;
+}
+
+.time-input {
+    width: 100%;
+}
+
 .next-step {
     display: block;
     color: rgb(19,0,57);
@@ -115,7 +192,7 @@ fieldset h2 {
     font-weight: 600;
     text-transform: uppercase;
     padding: 0.25rem 1rem;
-    margin: 0 auto 0 auto;
+    margin: 0 auto 3vh auto;
     outline: none;
     cursor: pointer;
 }
@@ -123,6 +200,8 @@ fieldset h2 {
 .fieldset-indicator {
     display: flex;
     justify-content: space-around;
+    margin-bottom: 3vh;
+    flex-grow: 0;
 }
 
 .indicator {

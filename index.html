@@ -27,9 +27,10 @@
 
             <form id="subscription-form" action="">
 
-                <fieldset id="f-personal" class="fieldset-hidden">
+                <fieldset id="f-personal" class="">
 
-                    <div class="fset-title-container"><h2>Dados do proprietário</h2></div>
+                    <h2>Dados do proprietário</h2>
+                    <div class="h2-spacer"></div>
 
                     <div class="input-margin">
 
@@ -48,7 +49,8 @@
 
                 <fieldset id="f-business" class="fieldset-hidden">
 
-                    <div class="fset-title-container"><h2>Dados do estabelecimento</h2></div>
+                    <h2>Dados do estabelecimento</h2>
+                    <div class="h2-spacer"></div>
 
                     <div class="input-margin">
 
@@ -67,7 +69,8 @@
 
                 <fieldset id="f-details" class="fieldset-hidden">
 
-                    <div class="fset-title-container"><h2>Características do estabelecimento</h2></div>
+                    <h2>Características do estabelecimento</h2>
+                    <div class="h2-spacer"></div>
 
                     <div class="input-margin">
                         
@@ -132,58 +135,95 @@
 
                 </fieldset>
 
-                <fieldset id="f-schedule" class="12fieldset-hidden">
+                <fieldset id="f-schedule" class="fieldset-hidden">
 
-                    <div class="fset-title-container"><h2>Funcionamento</h2></div>
+                    <h2>Funcionamento</h2>
+                    <div class="h2-spacer"></div>
 
-                    <div>
+                    <div class="input-margin">
 
                         <label for="weekdays" class="form-label">Dias de atendimento</label>
 
-                        <input type="checkbox" id="seg" class="check-days" name="weekdays" value="seg">
-                        <label for="seg" class="weekdays-label">Segunda-feira</label>
+                        <div class="day-centering">
+                            <div class="input-group atendimento">
 
-                        <input type="checkbox" id="ter" class="check-days" name="weekdays" value="ter">
-                        <label for="ter" class="weekdays-label">Terça-feira</label>
+                                <div class="input-day">
+                                    <input type="checkbox" id="seg" class="check-days" name="weekdays" value="seg">
+                                    <label for="seg" class="weekdays-label">Segunda-feira</label>
+                                </div>
 
-                        <input type="checkbox" id="qua" class="check-days" name="weekdays" value="qua">
-                        <label for="qua" class="weekdays-label">Quarta-feira</label>
+                                <div class="input-day">
+                                    <input type="checkbox" id="ter" class="check-days" name="weekdays" value="ter">
+                                    <label for="ter" class="weekdays-label">Terça-feira</label>
+                                </div>
 
-                        <input type="checkbox" id="quin" class="check-days" name="weekdays" value="quin">
-                        <label for="quin" class="weekdays-label">Quinta-feira</label>
+                                <div class="input-day">
+                                    <input type="checkbox" id="qua" class="check-days" name="weekdays" value="qua">
+                                    <label for="qua" class="weekdays-label">Quarta-feira</label>
+                                </div>
 
-                        <input type="checkbox" id="sex" class="check-days" name="weekdays" value="sex">
-                        <label for="sex" class="weekdays-label">Sexta-feira</label>
+                                <div class="input-day">
+                                    <input type="checkbox" id="quin" class="check-days" name="weekdays" value="quin">
+                                    <label for="quin" class="weekdays-label">Quinta-feira</label>
+                                </div>
 
-                        <input type="checkbox" id="sabado" class="check-days" name="weekdays" value="sabado">
-                        <label for="sabado" class="weekdays-label">Sábado</label>
+                                <div class="input-day">
+                                    <input type="checkbox" id="sex" class="check-days" name="weekdays" value="sex">
+                                    <label for="sex" class="weekdays-label">Sexta-feira</label>
+                                </div>
 
-                        <input type="checkbox" id="domingo" class="check-days" name="weekdays" value="domingo">
-                        <label for="domingo" class="weekdays-label">Domingo</label>
+                                <div class="input-day">
+                                    <input type="checkbox" id="sabado" class="check-days" name="weekdays" value="sabado">
+                                    <label for="sabado" class="weekdays-label">Sábado</label>
+                                </div>
+
+                                <div class="input-day">
+                                    <input type="checkbox" id="domingo" class="check-days" name="weekdays" value="domingo">
+                                    <label for="domingo" class="weekdays-label">Domingo</label>
+                                </div>
+
+                                <div class="input-day"></div>
+
+                            </div>
+                        </div>
+
+                        <p class="form-label">Horários</p>
+
+                        <div class="input-group schedule">
+
+                            <div class="hours">
+                                <label for="abertura" class="form-label">Abertura</label>
+                                <input type="time" id="abertura" class="time-input" name="abertura">
+                            </div>
+
+                            <div class="hours">
+                                <label for="encerramento" class="form-label">Encerramento</label>
+                                <input type="time" id="encerramento" class="time-input" name="encerramento">
+                            </div>
+
+                        </div>
 
                     </div>
-
-                    <label for="abertura" class="form-label">Horário de abertura</label>
-                    <input type="time" id="abertura" class="time-input" name="abertura">
-
-                    <label for="encerramento" class="form-label">Horário de encerramento</label>
-                    <input type="time" id="encerramento" class="time-input" name="encerramento">
 
                 </fieldset>
 
             </form>
 
-            <button type="button" class="next-step">Avançar ></button>
+            <div>
 
-            <div class="fieldset-indicator">
+                <button type="button" class="next-step">Avançar ></button>
 
-                <p id="ind-00" class="indicator active">1</p>
+                <div class="fieldset-indicator">
 
-                <p id="ind-01" class="indicator">2</p>
+                    <p id="ind-00" class="indicator active">1</p>
 
-                <p id="ind-02" class="indicator">3</p>
+                    <p id="ind-01" class="indicator">2</p>
 
-                <p id="ind-03" class="indicator">4</p>
+                    <p id="ind-02" class="indicator">3</p>
+
+                    <p id="ind-03" class="indicator">4</p>
+
+                </div>
 
             </div>
 
@@ -192,6 +232,6 @@
     </main>
     
 
-    <!--<script type="text/javascript" src="js/script.js"></script>-->
+    <script type="text/javascript" src="js/script.js"></script>
 </body>
 </html>
