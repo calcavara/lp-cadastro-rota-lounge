@@ -13,7 +13,7 @@ body {
 /* HEADER */
 
 header {
-    padding-top: 1rem;
+    padding-top: 5vh;
 }
 
 .rota-logo {
@@ -29,7 +29,7 @@ header {
 
 /* FORM */
 .form-section {
-    height: calc(100vh - 5vh - 1rem);
+    height: calc(100vh - 5vh - 5vh);
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -110,11 +110,13 @@ select:focus {
     max-width: 150px;
     text-align: center;
     box-shadow: 0 2px 5px 0 rgba(0,0,0,.16), 0 2px 10px 0 rgba(0,0,0,.12);
+    transition: all 400ms cubic-bezier(0.68, -0.55, 0.265, 1.55);
 }
 
-.upload-symbol {
-    font-size: 1.25rem;
-    font-weight: 700;
+#upload-button:hover,
+#upload-button:focus {
+    background-color: rgb(130, 190, 254);
+    color: white;
 }
 
 #business-facade {
@@ -257,12 +259,21 @@ select option {
         margin-bottom: 5vh;
     }
 
+    #upload-button {
+        width: 20vw;
+        max-width: 180px;
+    }
+
     .next-step {
         margin-bottom: 5vh;
     }
 }
 
 @media (min-width: 992px) {
+    .input-day:nth-last-child(1) {
+        display: none;
+    }
+
     .next-step {
         margin-bottom: 8vh;
     }
@@ -273,6 +284,7 @@ select option {
         top: 0;
         flex-direction: column;
         height: 100vh;
+        margin-bottom: 0;
     }
 
     .indicator {
