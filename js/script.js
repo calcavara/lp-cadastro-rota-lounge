@@ -15,8 +15,32 @@ const closingHours = document.getElementById("encerramento");
 // Form Fieldset Stepper
 let currentFieldset = 0;
 
+const validationUpdate = (valiFunc, inpField, errorClass) => {
+    if(valiFunc === false) {
+        inpField.parentElement.classList.add(errorClass);
+        inpField.style.border = "2px solid rgb(255,53,71)";
+    } else {
+        inpField.parentElement.classList.remove(errorClass);
+        inpField.style.border = "2px solid rgb(0, 200, 81)";
+    }
+}
+
 const stepAdvance = () => {
-    if (currentFieldset < 3) {
+    let canAdvance = false;
+    switch (currentFieldset) {
+        case 0:
+            validationUpdate(nameValidation(), ownerName, "owner-name-error");
+            validationUpdate(cpfValidation(), ownerCpf, "owner-cpf-error");
+            validationUpdate(wppValidation(), ownerWpp, "owner-wpp-error");
+            canAdvance = nameValidation() && cpfValidation() && wppValidation();
+            /* canAdvance = true; */
+            break;
+
+        case 1:
+            validationUpdate(bizNameValidation(), bizName, "business-name-error");
+
+    }
+    if (currentFieldset < 3 && canAdvance) {
         fieldsetsArr[currentFieldset].classList.toggle("fieldset-hidden");
         fieldsetsIndicator[currentFieldset].classList.toggle("active");
         fieldsetsIndicator[currentFieldset].classList.toggle("done");
@@ -113,16 +137,18 @@ zipCode.addEventListener("input", zipCodeMask);
 
 // Name Validation
 const nameValidation = () => {
-    let isItValid = (/\w\w+\s\w/).test(ownerName.value);
-    return isItValid;
+    return (/\w\w+\s\w+/).test(ownerName.value);
 }
 
 // CPF Validation
 const cpfValidation = () => {
-    const filteredArr = ownerCpf.value.match(/\d/g);
+    let filteredArr = ownerCpf.value.match(/\d/g);
+    if (filteredArr === null) {
+        filteredArr = [];
+    }
     const numArr = filteredArr.map(x => Number(x));
     // First digit validation
-    if (numArr != null && numArr.length === 11) {
+    if (numArr.length === 11) {
         // Tests for all numbers equal
         if (numArr.every(x => x === numArr[0])) {
             return false;
@@ -151,6 +177,9 @@ const cpfValidation = () => {
 // WhatsApp number validation
 const wppValidation = () => {
     let numArr = ownerWpp.value.match(/\d/g);
+    if (numArr === null) {
+        numArr = [];
+    }
     if (numArr.length === 11 && numArr[2] == 9) {
         return true;
     } else {
