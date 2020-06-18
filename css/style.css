@@ -27,9 +27,14 @@ header {
     height: 5vh;
 }
 
+/* CONTENT SECTION */
+.presentation-section {
+    display: none;
+}
+
 /* FORM */
 .form-section {
-    height: calc(100vh - 5vh - 5vh);
+    height: 90vh;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -38,13 +43,21 @@ header {
 #subscription-form {
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    flex-grow: 10;
+    justify-content: space-between;
+    flex-grow: 100;
 }
 
 /* FIELDSETS */
 fieldset {
     border: none;
+    flex-grow: 1000;
+}
+
+.outter-center-div {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100%;
 }
 
 .fieldset-hidden {
@@ -120,6 +133,27 @@ select:focus {
     content: "Insira um nome de negócio válido";
 }
 
+.business-zip-code-error::after {
+    content: "Insira um CEP válido";
+}
+
+.shop-type-error::after {
+    content: "Selecione um tipo de estabelecimento";
+}
+
+.features-error::after {
+    content: "Selecione ao menos uma comodidade oferecida";
+}
+
+.open-days-error::after {
+    content: "Selecione os dias de atendimento";
+}
+
+.hours-error::after {
+    content: "Horário inválido";
+}
+
+.hours::after,
 .form-input-div::after {
     color: rgb(255,53,71);
     font-size: small;
@@ -130,6 +164,7 @@ select:focus {
     text-transform: capitalize;
 }
 
+/* UPLOAD BUTTON FOR IMAGE */
 #upload-button {
     display: block;
     padding: 1vh 2vh;
@@ -173,7 +208,6 @@ select:focus {
     border: none;
     height: 2.5rem;
     background-color: rgb(250, 250, 250);
-    margin-bottom: 3vh;
     font-family: Montserrat, Helvetica, Arial, sans-serif;
     font-size: 1rem;
 }
@@ -190,7 +224,6 @@ select option {
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
-    margin-bottom: 2vh;
 }
 
 .input-day {
@@ -214,6 +247,7 @@ select option {
 
 .hours label {
     font-size: 0.75rem;
+    margin-top: 0;
 }
 
 .hours input {
@@ -232,6 +266,7 @@ select option {
     width: 100%;
 }
 
+/* FORM FOOTER */
 .next-step {
     display: block;
     color: rgb(19,0,57);

@@ -8,9 +8,13 @@ const bizName = document.getElementById("business-name");
 const zipCode = document.getElementById("business-zip-code");
 const shopType = document.getElementById("shop-type");
 const features = document.querySelectorAll(".check-features");
+const featuresGroup = document.querySelector(".features-group");
 const openDays = document.querySelectorAll(".check-days");
+const openDaysGroup = document.querySelector(".atendimento");
 const openingHours = document.getElementById("abertura");
 const closingHours = document.getElementById("encerramento");
+
+let cheatGo = false;
 
 // Form Fieldset Stepper
 let currentFieldset = 0;
@@ -25,22 +29,57 @@ const validationUpdate = (valiFunc, inpField, errorClass) => {
     }
 }
 
+const canAdvance = (whichFieldset) => {
+    let okAdvance = false;
+    if (whichFieldset > 2) {
+        return false;
+    } else {
+        switch (whichFieldset) {
+            case 0:
+                okAdvance = nameValidation() && cpfValidation() && wppValidation();
+                break;
+    
+            case 1:
+                okAdvance = bizNameValidation() && zipCodeValidation();
+                break;
+    
+            case 2:
+                okAdvance = shopTypeValidation() && featuresValidation();
+                break;
+    
+            case 3:
+                okAdvance = openDaysValidation() && openingHoursValidation() && closingHoursValidation();
+                break;
+        }
+        return okAdvance;
+    }
+}
+
 const stepAdvance = () => {
-    let canAdvance = false;
     switch (currentFieldset) {
         case 0:
             validationUpdate(nameValidation(), ownerName, "owner-name-error");
             validationUpdate(cpfValidation(), ownerCpf, "owner-cpf-error");
             validationUpdate(wppValidation(), ownerWpp, "owner-wpp-error");
-            canAdvance = nameValidation() && cpfValidation() && wppValidation();
-            /* canAdvance = true; */
             break;
 
         case 1:
             validationUpdate(bizNameValidation(), bizName, "business-name-error");
+            validationUpdate(zipCodeValidation(), zipCode, "business-zip-code-error");
+            break;
 
+        case 2:
+            validationUpdate(shopTypeValidation(), shopType, "shop-type-error");
+            validationUpdate(featuresValidation(), featuresGroup, "features-error");
+            break;
+
+        case 3:
+            validationUpdate(openDaysValidation(), openDaysGroup, "open-days-error");
+            validationUpdate(openingHoursValidation(), openingHours, "hours-error");
+            validationUpdate(closingHoursValidation(), closingHours, "hours-error");
+            break;
     }
-    if (currentFieldset < 3 && canAdvance) {
+    if (canAdvance(currentFieldset) || cheatGo) {
         fieldsetsArr[currentFieldset].classList.toggle("fieldset-hidden");
         fieldsetsIndicator[currentFieldset].classList.toggle("active");
         fieldsetsIndicator[currentFieldset].classList.toggle("done");
@@ -63,6 +102,10 @@ const ownerNameMask = (inputValue) => {
     } else {
         ownerName.value = "";
     }
+    // If an error is indicated on validation, this gives the user a live feedback on the input been updated
+    if (ownerName.parentElement.classList.contains("owner-name-error")) {
+        validationUpdate(nameValidation(), ownerName, "owner-name-error");
+    }
 }
 
 // Owner CPF Mask
@@ -82,6 +125,10 @@ const ownerCpfMask = (inputValue) => {
     } else {
         ownerCpf.value = "";
     }
+    // If an error is indicated on validation, this gives the user a live feedback on the input been updated
+    if (ownerCpf.parentElement.classList.contains("owner-cpf-error")) {
+        validationUpdate(cpfValidation(), ownerCpf, "owner-cpf-error");
+    }
 }
 
 // Owner WhatsApp Mask
@@ -100,7 +147,11 @@ const ownerWppMask = (inputValue) => {
             numbersArr.splice(9, 0, "-");
         }
         ownerWpp.value = numbersArr.slice(0, 14).join("");
-    } 
+    }
+    // If an error is indicated on validation, this gives the user a live feedback on the input been updated
+    if (ownerWpp.parentElement.classList.contains("owner-wpp-error")) {
+        validationUpdate(wppValidation(), ownerWpp, "owner-wpp-error");
+    }
 }
 
 // Business Name Mask
@@ -110,6 +161,10 @@ const bizNameMask = (inputValue) => {
         bizName.value = charArr.join("");
     } else {
         bizName.value = "";
+    }
+    // If an error is indicated on validation, this gives the user a live feedback on the input been updated
+    if (bizName.parentElement.classList.contains("business-name-error")) {
+        validationUpdate(bizNameValidation(), bizName, "business-name-error");
     }
 }
 
@@ -123,6 +178,10 @@ const zipCodeMask = (inputValue) => {
         zipCode.value = numArr.join("").slice(0, 9);
     } else {
         zipCode.value = "";
+    }
+    // If an error is indicated on validation, this gives the user a live feedback on the input been updated
+    if (zipCode.parentElement.classList.contains("business-zip-code-error")) {
+        validationUpdate(zipCodeValidation(), zipCode, "business-zip-code-error");
     }
 }
 
