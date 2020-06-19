@@ -1,5 +1,7 @@
+const theForm = document.getElementById("subscription-form");
 const fieldsetsArr = document.querySelectorAll("fieldset");
-const nextStepBtn = document.querySelector(".next-step");
+const nextStepBtn = document.querySelector("#next-stepper");
+const formSendBtn = document.querySelector("#form-sender");
 const fieldsetsIndicator = document.querySelectorAll(".indicator");
 const ownerName = document.getElementById("owner-name");
 const ownerCpf = document.getElementById("owner-cpf");
@@ -32,7 +34,7 @@ const validationUpdate = (valiFunc, inpField, errorClass) => {
 const canAdvance = (whichFieldset) => {
     let okAdvance = false;
     if (whichFieldset > 2) {
-        return false;
+        return okAdvance;
     } else {
         switch (whichFieldset) {
             case 0:
@@ -45,10 +47,6 @@ const canAdvance = (whichFieldset) => {
     
             case 2:
                 okAdvance = shopTypeValidation() && featuresValidation();
-                break;
-    
-            case 3:
-                okAdvance = openDaysValidation() && openingHoursValidation() && closingHoursValidation();
                 break;
         }
         return okAdvance;
@@ -72,12 +70,6 @@ const stepAdvance = () => {
             validationUpdate(shopTypeValidation(), shopType, "shop-type-error");
             validationUpdate(featuresValidation(), featuresGroup, "features-error");
             break;
-
-        case 3:
-            validationUpdate(openDaysValidation(), openDaysGroup, "open-days-error");
-            validationUpdate(openingHoursValidation(), openingHours, "hours-error");
-            validationUpdate(closingHoursValidation(), closingHours, "hours-error");
-            break;
     }
     if (canAdvance(currentFieldset) || cheatGo) {
         fieldsetsArr[currentFieldset].classList.toggle("fieldset-hidden");
@@ -85,12 +77,42 @@ const stepAdvance = () => {
         fieldsetsIndicator[currentFieldset].classList.toggle("done");
         fieldsetsIndicator[currentFieldset].textContent = "✔";
         currentFieldset++;
-        fieldsetsIndicator[currentFieldset].classList.toggle("active");
-        fieldsetsArr[currentFieldset].classList.toggle("fieldset-hidden");
+        if (currentFieldset === 3) {
+            nextStepBtn.classList.toggle("btn-form-hide");
+            formSendBtn.classList.toggle("btn-form-hide");
+        } else if (currentFieldset === 4) {
+            formSendBtn.classList.toggle("btn-form-hide");
+        }
+        if (currentFieldset < 4) {
+            fieldsetsIndicator[currentFieldset].classList.toggle("active");
+        }
+        fieldsetsArr[currentFieldset].classList.toggle("fieldset-hidden");        
     }
 };
 
 nextStepBtn.addEventListener("click", stepAdvance, false);
+
+// **** FORM SEND VALIDATION
+const sendForm = (submitEvent) => {
+    const isFormValid = openDaysValidation() && openDaysValidation() && closingHoursValidation();
+    if (isFormValid) {
+        fieldsetsIndicator[currentFieldset].classList.toggle("active");
+        fieldsetsIndicator[currentFieldset].classList.toggle("done");
+        fieldsetsIndicator[currentFieldset].textContent = "✔";
+        theForm.requestSubmit();
+        fieldsetsArr[currentFieldset].classList.toggle("fieldset-hidden");
+        formSendBtn.classList.toggle("btn-form-hide");
+        currentFieldset++;
+        fieldsetsArr[currentFieldset].classList.toggle("fieldset-hidden");
+    } else {
+        validationUpdate(openDaysValidation(), openDaysGroup, "open-days-error");
+        validationUpdate(openingHoursValidation(), openingHours, "hours-error");
+        validationUpdate(closingHoursValidation(), closingHours, "hours-error");
+        submitEvent.preventDefault();
+    }
+}
+
+theForm.addEventListener("submit", sendForm);
 
 // **** MASKS ****
 

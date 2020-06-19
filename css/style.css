@@ -279,6 +279,16 @@ select option {
     margin: 0 auto 3vh auto;
     outline: none;
     cursor: pointer;
+    transition: all 250ms;
+}
+
+.next-step:hover {
+    color: rgb(13,71,161);
+    border-color: rgb(13,71,161);
+}
+
+.btn-form-hide {
+    display: none;
 }
 
 .fieldset-indicator {

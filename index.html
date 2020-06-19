@@ -27,7 +27,7 @@
 
             <section class="form-section">
 
-                <form id="subscription-form" action="">
+                <form id="subscription-form" onsubmit="return false">
 
                     <fieldset id="f-personal" class="">
 
@@ -41,17 +41,17 @@
 
                                 <div class="form-input-div">
                                     <label for="owner-name" class="form-label">Nome completo do responsável</label>
-                                    <input type="text" id="owner-name" class="form-input" name="owner-name" required>
+                                    <input type="text" id="owner-name" class="form-input" name="owner-name">
                                 </div>
 
                                 <div class="form-input-div">
                                     <label for="owner-cpf" class="form-label">CPF do responsável</label>
-                                    <input type="tel" id="owner-cpf" class="form-input" name="owner-cpf" required>
+                                    <input type="tel" id="owner-cpf" class="form-input" name="owner-cpf">
                                 </div>
                                 
                                 <div class="form-input-div">
                                     <label for="owner-wpp" class="form-label">WhatsApp do responsável</label>
-                                    <input type="tel" id="owner-wpp" class="form-input" name="owner-wpp" required>
+                                    <input type="tel" id="owner-wpp" class="form-input" name="owner-wpp">
                                 </div>
 
                             </div>
@@ -73,12 +73,12 @@
 
                                 <div class="form-input-div">
                                     <label for="business-name" class="form-label">Nome do estabelecimento</label>
-                                    <input type="text" id="business-name" class="form-input" name="business-name" required>
+                                    <input type="text" id="business-name" class="form-input" name="business-name">
                                 </div>
 
                                 <div class="form-input-div">
                                     <label for="business-zip-code" class="form-label">CEP</label>
-                                    <input type="tel" id="business-zip-code" class="form-input" name="business-zip-code" required>
+                                    <input type="tel" id="business-zip-code" class="form-input" name="business-zip-code">
                                 </div>
 
                                 <p class="form-label">Foto da fachada</p>
@@ -105,7 +105,7 @@
                                 <label for="shop-type" class="form-label">Tipo</label>
 
                                 <div class="form-input-div">
-                                    <select name="shop-type" id="shop-type" required>
+                                    <select name="shop-type" id="shop-type">
 
                                         <option disabled="" selected="" value="selecionar">Selecione um tipo</option>
                                         <option value="tabacaria">Tabacaria</option>
@@ -230,12 +230,12 @@
 
                                     <div class="hours">
                                         <label for="abertura" class="form-label">Abertura</label>
-                                        <input type="time" id="abertura" class="time-input" name="abertura" required>
+                                        <input type="time" id="abertura" class="time-input" name="abertura">
                                     </div>
 
                                     <div class="hours">
                                         <label for="encerramento" class="form-label">Encerramento</label>
-                                        <input type="time" id="encerramento" class="time-input" name="encerramento" required>
+                                        <input type="time" id="encerramento" class="time-input" name="encerramento">
                                     </div>
 
                                 </div>
@@ -247,10 +247,31 @@
 
                     </fieldset>
 
+                    <fieldset id="f-success" class="fieldset-hidden">
+
+                        <div class="outter-center-div">
+                        <div class="to-center-div">
+
+                            <h2>Cadastro concluído!</h2>
+                            <div class="h2-spacer"></div>
+
+                            <div class="input-margin">
+
+                                <p class="input-group">Em instantes você receberá no seu WhatsApp as informações de acesso da sua conta Rota Lounge.</p>
+
+                            </div>
+
+                        </div>
+                        </div>
+
+                    </fieldset>
+
                     <div class="form-footer">
 
-                        <button type="button" class="next-step">Avançar ></button>
-    
+                        <button type="button" id="next-stepper" class="next-step">Avançar ></button>
+
+                        <button type="submit" value="submit" id="form-sender" class="next-step btn-form-hide">Cadastrar ✔</button>
+                            
                         <div class="fieldset-indicator">
     
                             <p id="ind-00" class="indicator active">1</p>
