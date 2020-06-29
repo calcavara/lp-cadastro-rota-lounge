@@ -1,0 +1,22 @@
+{
+  "name": "lp-cadastro-rota-lounge",
+  "version": "1.0.0",
+  "description": "Landing page with step form to sign up to service.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/calcavara/lp-cadastro-rota-lounge.git"
+  },
+  "keywords": [
+    "signup"
+  ],
+  "author": "Gustavo Calçavara",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/calcavara/lp-cadastro-rota-lounge/issues"
+  },
+  "homepage": "https://github.com/calcavara/lp-cadastro-rota-lounge#readme"
+}
