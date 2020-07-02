@@ -15,8 +15,19 @@ const openDays = document.querySelectorAll(".check-days");
 const openDaysGroup = document.querySelector(".atendimento");
 const openingHours = document.getElementById("abertura");
 const closingHours = document.getElementById("encerramento");
+const gotoformButtons = document.querySelectorAll(".go-to-form");
+const lpsections = document.querySelectorAll(".lp-sections")
+const formSection = document.querySelector(".form-section");
 
 let cheatGo = false;
+
+// Hide LP content => Go To Form
+const hideLpContent = () => {
+    lpsections.forEach(section => section.classList.add("hide-lp"));
+    formSection.classList.toggle("hide-form");
+}
+
+gotoformButtons.forEach(button => button.addEventListener("click", hideLpContent));
 
 // Form Fieldset Stepper
 let currentFieldset = 0;
@@ -24,7 +35,7 @@ let currentFieldset = 0;
 const validationUpdate = (valiFunc, inpField, errorClass) => {
     if(valiFunc === false) {
         inpField.parentElement.classList.add(errorClass);
-        inpField.style.border = "2px solid rgb(255,53,71)";
+        inpField.style.border = "2px solid rgb(223, 1, 20)";
     } else {
         inpField.parentElement.classList.remove(errorClass);
         inpField.style.border = "2px solid rgb(0, 200, 81)";

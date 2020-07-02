@@ -2,12 +2,12 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    color: rgb(33,37,41);
+    color: rgb(14, 39, 60);
     font-family: Montserrat, Helvetica, Arial, sans-serif;
 }
 
 body {
-    background-color: rgb(253,204,82);
+    background-color: rgb(211, 188, 204);
 }
 
 /* HEADER */
@@ -27,17 +27,116 @@ header {
     height: 5vh;
 }
 
-/* CONTENT SECTION */
-.presentation-section {
+/* PRESENTATION SECTION */
+.section-pad {
+    padding: 2.5rem 1rem 2.5rem 1rem;
+}
+
+.presentation-section h1 {
+    padding: 1rem;
+    border: 2px solid rgb(74, 48, 109);
+    text-transform: capitalize;
+    font-size: 2.25rem;
+    color: rgb(74, 48, 109);
+    text-shadow: 1px 1px rgb(161, 103, 165);
+    box-shadow: 8px 8px;
+}
+
+.intro-box-info {
+    margin-top: 7.5vh;
+    background-color: rgb(232, 215, 241);
+    padding: 1rem;
+}
+
+.box-info {
+    font-size: 1.25rem;
+    font-weight: 500;
+    line-height: 1.75rem;
+}
+
+.go-to-form {
+    background-color: rgb(74, 48, 109);
+    border: none;
+    color: rgb(255, 255, 255);
+    padding: 0.5rem;
+    font-weight: 500;
+    display: block;
+    margin: 1.25rem auto 0 auto;
+    text-transform: uppercase;
+    outline: none;
+    cursor: pointer;
+}
+
+.go-to-form:hover {
+    background-color: rgb(161, 103, 165);
+}
+
+.hide-lp {
     display: none;
 }
 
-/* FORM */
+/* FEATURES SECTION */
+.rota-features {
+    background-color: rgb(161, 103, 165);
+}
+
+.rota-features h2 {
+    color: rgb(255, 255, 255);
+    text-shadow: 2px 3px rgb(74, 48, 109);
+    font-size: 2rem;
+}
+
+.features-deck {
+    margin-top: 1rem;
+}
+
+.feature-card {
+    margin-top: 1.25rem;
+}
+
+.feature-title {
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    background-color: rgb(232, 215, 241);
+    display: inline-block;
+    position: relative;
+    bottom: -0.15rem;
+    padding: 0 0.5rem;
+    line-height: 1.75rem;
+    border-top: 2px solid rgb(221, 141, 227);
+}
+
+.card-content {
+    background-color: rgb(232, 215, 241);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 5px 5px rgb(74, 48, 109);
+}
+
+.card-content p {
+    font-size: 1rem;
+    font-weight: 500;
+    padding: 1rem 1rem 1rem 0;
+}
+
+.card-content img {
+    width: 30vw;
+    height: 30vw;
+    padding: 1rem;
+    display: block;
+}
+
+/* STEP FORM SIGN-UP SECTION */
 .form-section {
     height: 90vh;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+}
+
+.hide-form {
+    display: none;
 }
 
 #subscription-form {
@@ -66,10 +165,10 @@ fieldset {
 
 fieldset h2 {
     color: rgb(255, 255, 255);
-    background-color: rgb(19,0,57);
-    -webkit-box-shadow: 0.5rem 0 0 rgb(19,0,57), -0.5rem 0 0 rgb(19,0,57);
-    -moz-box-shadow: 0.5rem 0 0 rgb(19,0,57), -0.5rem 0 0 rgb(19,0,57);
-    box-shadow: 0.5rem 0 0 rgb(19,0,57), -0.5rem 0 0 rgb(19,0,57);
+    background-color: rgb(74, 48, 109);
+    -webkit-box-shadow: 0.5rem 0 0 rgb(74, 48, 109), -0.5rem 0 0 rgb(74, 48, 109);
+    -moz-box-shadow: 0.5rem 0 0 rgb(74, 48, 109), -0.5rem 0 0 rgb(74, 48, 109);
+    box-shadow: 0.5rem 0 0 rgb(74, 48, 109), -0.5rem 0 0 rgb(74, 48, 109);
     position: relative;
     left: 0.25rem;
     padding: 0.25rem 0 0.25rem 0;
@@ -106,7 +205,7 @@ input[type=tel] {
 
 input:focus,
 select:focus {
-    outline: 3px solid rgb(130, 190, 254);
+    outline: 3px solid rgb(194, 123, 199);
 }
 
 .form-input {
@@ -155,7 +254,7 @@ select:focus {
 
 .hours::after,
 .form-input-div::after {
-    color: rgb(255,53,71);
+    color: rgb(223, 1, 20);
     font-size: small;
     position: absolute;
 }
@@ -269,9 +368,9 @@ select option {
 /* FORM FOOTER */
 .next-step {
     display: block;
-    color: rgb(19,0,57);
+    color: rgb(74, 48, 109);
     background-color: transparent;
-    border: 3px solid rgb(19,0,57);
+    border: 3px solid rgb(74, 48, 109);
     font-size: 1.75rem;
     font-weight: 600;
     text-transform: uppercase;
@@ -283,8 +382,8 @@ select option {
 }
 
 .next-step:hover {
-    color: rgb(13,71,161);
-    border-color: rgb(13,71,161);
+    color: rgb(161, 103, 165);
+    border-color: rgb(161, 103, 165);
 }
 
 .btn-form-hide {
@@ -314,11 +413,37 @@ select option {
 }
 
 .indicator.active {
-    color: rgb(19,0,57);
-    border-color: rgb(19,0,57);
+    color: rgb(74, 48, 109);
+    border-color: rgb(74, 48, 109);
+}
+
+.ok-message {
+    text-align: justify;
 }
 
 @media (min-width: 768px) {
+    .features-deck {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 2rem;
+    }
+
+    .card-content {
+        flex-direction: column;
+        justify-content: flex-start;
+    }
+
+    .card-content img {
+        width: 10vw;
+        height: 10vw;
+        padding: 0;
+        margin-top: 1rem;
+    }
+
+    .card-content p {
+        padding: 1rem;
+    }
+
     .container {
         max-width: 800px;
         margin: 0 auto;
@@ -343,6 +468,11 @@ select option {
 }
 
 @media (min-width: 992px) {
+    .card-content img {
+        width: 5vw;
+        height: 5vw;
+    }
+
     .input-day:nth-last-child(1) {
         display: none;
     }
